@@ -4,6 +4,7 @@ import BannerImg from "../../../../assets/coffee-white.png";
 
 import BgImg from "../../../../assets/website/coffee-texture.jpg";
 import { FaFacebookF, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
 const bgImage = {
   backgroundImage: `url(${BgImg})`,
@@ -18,9 +19,10 @@ const Banner = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { id } = useParams(); // Access the route parameter
 
   useEffect(() => {
-    axios.get('http://localhost:9090/coffe/coffes/5ciRXl6AXesLbtGwpygt')
+    axios.get(`http://localhost:9090/coffe/coffes/${id}`)
       .then(response => {
         setData(response.data);
         setLoading(false);
@@ -29,10 +31,10 @@ const Banner = () => {
         setError(error.message);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (error) return null;
 
   return (
     <>

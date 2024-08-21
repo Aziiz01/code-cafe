@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import HeroPng from "../../../../assets/logo.jpg"; // Default image in case API fails
+import { useParams } from "react-router-dom";
 
 const Hero = () => {
   const [heroData, setHeroData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const { id } = useParams();
   useEffect(() => {
-    axios.get('http://localhost:9090/coffe/coffes/5ciRXl6AXesLbtGwpygt')
+    axios.get(`http://localhost:9090/coffe/coffes/${id}`)
       .then(response => {
         setHeroData(response.data);
         setLoading(false);
@@ -17,7 +18,7 @@ const Hero = () => {
         setError(error.message);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
