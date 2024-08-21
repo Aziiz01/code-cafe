@@ -55,10 +55,12 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <button className=" bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3">
+              <a 
+              href="/coffe"
+              className=" bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3">
                 Order
                 <FaCoffee className="text-xl text-white drop-shadow-sm cursor-pointer" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
