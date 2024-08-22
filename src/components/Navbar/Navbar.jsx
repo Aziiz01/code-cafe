@@ -1,11 +1,10 @@
-import React from "react";
 import Logo from "../../assets/website/coffee_logo.png";
 import { FaCoffee } from "react-icons/fa";
 
 const Menu = [
   {
     id: 1,
-    name: "Home",
+    name: "Acceuil",
     link: "/#",
   },
   {
@@ -15,7 +14,7 @@ const Menu = [
   },
   {
     id: 3,
-    name: "About",
+    name: "A Propos",
     link: "/#about",
   },
 ];
@@ -32,7 +31,7 @@ const Navbar = () => {
                 className="font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
               >
                 <img src={Logo} alt="Logo" className="w-14" />
-                Coffee Cafe
+                Houny Café
               </a>
             </div>
 
@@ -48,7 +47,7 @@ const Navbar = () => {
                   <li key={menu.id}>
                     <a
                       href={menu.link}
-                      className="inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"
+                      className="inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200 font-cursive2"
                     >
                       {menu.name}
                     </a>
@@ -57,8 +56,8 @@ const Navbar = () => {
               </ul>
               <a 
               href="/coffe"
-              className=" bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3">
-                Order
+              className=" bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3 font-cursive2" >
+                Contact
                 <FaCoffee className="text-xl text-white drop-shadow-sm cursor-pointer" />
               </a>
             </div>

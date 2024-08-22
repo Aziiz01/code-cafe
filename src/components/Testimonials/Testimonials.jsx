@@ -1,29 +1,28 @@
-import React from "react";
 import Slider from "react-slick";
 
 const TestimonialData = [
   {
     id: 1,
     name: "Dilshad",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "Grâce à cette solution, mes clients n'ont plus à demander le mot de passe Wi-Fi ! Tout est si simple et accessible.",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
     name: "Sabir ali",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "La page web de mon café est magnifique et contient toutes les infos dont mes clients ont besoin. Un vrai gain de temps !",
     img: "https://picsum.photos/102/102",
   },
   {
     id: 3,
     name: "Dipankar kumar",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "J'ai vu une nette amélioration de l'engagement client depuis que j'utilise cette solution. Mes clients adorent la simplicité des QR codes.",
     img: "https://picsum.photos/104/104",
   },
   {
     id: 5,
     name: "Satya Narayan",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "Les QR codes sont un atout pour mon café. Mes clients apprécient de pouvoir accéder rapidement à notre menu et à notre Wi-Fi.",
     img: "https://picsum.photos/103/103",
   },
 ];
@@ -84,7 +83,7 @@ const Testimonials = () => {
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data) => (
-              <div className="my-6">
+              <div className="my-6" key={data.id}>
                 <div
                   key={data.id}
                   className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl  bg-primary/10 relative"
