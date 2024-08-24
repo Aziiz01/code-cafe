@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import BgPng from "../../../../assets/website/coffee-beans-bg.png";
 
 const Hero = () => {
   const [heroData, setHeroData] = useState(null);
@@ -12,7 +13,7 @@ const Hero = () => {
       .then(response => {
         setHeroData(response.data);
         setLoading(false);
-        console.log(response.data.logo)
+        console.log(response.data)
       })
       .catch(error => {
         setError(error.message);
@@ -25,7 +26,14 @@ const Hero = () => {
 
   return (
     <>
-      <div className="min-h-[550px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white">
+      <div style={{
+          backgroundImage: `url(${BgPng})`, 
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "100%",
+          width: "100%" }}
+       className="min-h-[550px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white">
         <div className="container pb-8 sm:pb-0">
           <div className="grid grid-cols-1 sm:grid-cols-2">
             {/* Text content section */}

@@ -1,7 +1,7 @@
 import  { useEffect, useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
-import menu from "../../../../assets/menu.jpg";
+//import menu from "../../../../assets/menu.jpg";
 import { useParams } from "react-router-dom";
 
 // Set up the app element for accessibility
@@ -63,7 +63,7 @@ const Services = () => {
                                 {/*src={servicesData.menu} */}
 
                   <img
-                    src={menu}
+src={servicesData.menu}
                     alt="Coffee Menu"
                     className="absolute inset-0 w-full h-full object-cover cursor-pointer transform duration-300 group-hover:scale-105"
                     onClick={() => openModal(servicesData.menu)}
